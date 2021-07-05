@@ -29,6 +29,8 @@ namespace Template.Game
             if (args.Length < 1)
                 return;
 
+            window.MinSize = (1366, 768);
+
             browser.MouseFilter = Control.MouseFilterMode.Stop;
             window.MouseFilter = Control.MouseFilterMode.Pass;
             window.Contents.AddChild(browser);
