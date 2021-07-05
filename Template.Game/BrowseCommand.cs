@@ -33,7 +33,7 @@ namespace Template.Game
             window.MouseFilter = Control.MouseFilterMode.Pass;
             window.Contents.AddChild(browser);
 
-            browser.Browse(args[0]);
+            browser.Url = args[0];
 
             window.Open();
         }
