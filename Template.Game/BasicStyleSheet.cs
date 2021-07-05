@@ -1,6 +1,8 @@
-﻿using Robust.Client.Graphics;
+﻿using System.Drawing;
+using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.IoC;
 using static Robust.Client.UserInterface.StylesheetHelpers;
 
@@ -16,8 +18,11 @@ namespace Template.Game
 
             return new Stylesheet(new StyleRule[]
             {
-                Element().Prop("font", notoSans12)
+                Element().Prop("font", notoSans12),
+
+                Element().Class(SS14Window.StyleClassWindowPanel)
+                    .Prop("panel", new StyleBoxFlat {BackgroundColor = Color.DarkSlateGray})
             });
-        } 
+        }
     }
 }
