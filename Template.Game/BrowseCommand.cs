@@ -1,6 +1,7 @@
 ﻿using JetBrains.Annotations;
 using Robust.Client.CEF;
 using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Console;
 using Robust.Shared.IoC;
@@ -16,28 +17,14 @@ namespace Template.Game
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            if (args.Length != 1)
-            {
-                shell.WriteError("Incorrect amount of arguments! Must be a single one.");
-                return;
-            }
+            // duckduckgo doesn't ask me to accept privacy policy, based.
+            var url = args.Length >= 1 ? args[0] : "https://duckduckgo.com";
 
-            var window = new SS14Window();
-
-            var browser = new BrowserControl();
-
-            if (args.Length < 1)
-                return;
-
-            window.MinSize = (1366, 768);
-
-            browser.MouseFilter = Control.MouseFilterMode.Stop;
-            window.MouseFilter = Control.MouseFilterMode.Pass;
-            window.Contents.AddChild(browser);
-
-            browser.Url = args[0];
-
+            var window = new GameBrowserWindow();
+            
             window.Open();
+            
+            window.Browse(url);
         }
     }
 

@@ -1,0 +1,8 @@
+<SS14Window xmlns="https://spacestation14.io"
+            xmlns:cef="clr-namespace:Robust.Client.CEF;assembly=Robust.Client.CEF"
+            MinWidth="1366" MinHeight="768">
+    <VBoxContainer>
+        <LineEdit Name="UrlBar" />
+        <cef:BrowserControl Name="Browser" VerticalExpand="True" />
+    </VBoxContainer>
+</SS14Window>
