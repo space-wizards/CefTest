@@ -1,5 +1,7 @@
 using System.Globalization;
 using Robust.Client;
+using Robust.Client.CEF;
+using Robust.Client.UserInterface;
 using Robust.Shared.ContentPack;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
@@ -21,7 +23,15 @@ namespace Template.Game
         public override void PreInit()
         {
             base.PreInit();
-            
+
+            IoCManager.Register<CefManager>();
+
+            IoCManager.BuildGraph();
+
+            IoCManager.Resolve<CefManager>().Initialize();
+
+            IoCManager.Resolve<IUserInterfaceManager>().Stylesheet = BasicStyleSheet.Make();
+
             // Default to en-US.
             // DEVNOTE: If you want your game to be multi-regional at runtime, you'll need to 
             // do something more complicated here.
@@ -47,7 +57,7 @@ namespace Template.Game
             base.PostInit();
 
             // DEVNOTE: Further setup..
-            
+
             // DEVNOTE: This starts the singleplayer mode,
             // which means you can start creating entities, spawning things...
             // If you want to have a main menu to start the game from instead, use the StateManager.
@@ -57,17 +67,17 @@ namespace Template.Game
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
-            
+
             // DEVNOTE: You'll want to do a proper shutdown here.
+            
+            IoCManager.Resolve<CefManager>().Shutdown();
         }
 
         public override void Update(ModUpdateLevel level, FrameEventArgs frameEventArgs)
         {
             base.Update(level, frameEventArgs);
-            
-            // DEVNOTE: Game update loop goes here. Usually you'll want some independent GameTicker.
+
+            IoCManager.Resolve<CefManager>().Update();
         }
     }
-
-    
 }
