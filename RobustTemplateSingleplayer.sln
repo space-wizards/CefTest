@@ -63,7 +63,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linguini.Syntax", "RobustTo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralRules.Generator", "RobustToolbox\Linguini\PluralRules.Generator\PluralRules.Generator.csproj", "{C7B7E811-98F3-405F-9F92-91FA983710A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Robust.Client.CEF", "RobustToolbox\Robust.Client.CEF\Robust.Client.CEF.csproj", "{0BC1A6D5-7752-4A08-8F09-E2E1F241517B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Robust.Client.WebView", "RobustToolbox\Robust.Client.WebView\Robust.Client.WebView.csproj", "{0BC1A6D5-7752-4A08-8F09-E2E1F241517B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cef", "Cef", "{A1E751C9-3C65-41E8-BAFE-55D2A6B3EC7A}"
 EndProject

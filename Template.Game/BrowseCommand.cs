@@ -1,5 +1,5 @@
 ﻿using JetBrains.Annotations;
-using Robust.Client.CEF;
+using Robust.Client.WebView;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
@@ -48,7 +48,7 @@ namespace Template.Game
                 Url = args[0]
             };
 
-            var cef = IoCManager.Resolve<CefManager>();
+            var cef = IoCManager.Resolve<IWebViewManager>();
             cef.CreateBrowserWindow(parameters);
         }
     }

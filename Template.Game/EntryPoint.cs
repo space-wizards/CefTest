@@ -1,6 +1,6 @@
 using System.Globalization;
 using Robust.Client;
-using Robust.Client.CEF;
+using Robust.Client.WebView;
 using Robust.Client.UserInterface;
 using Robust.Shared.ContentPack;
 using Robust.Shared.GameObjects;
@@ -24,11 +24,7 @@ namespace Template.Game
         {
             base.PreInit();
 
-            IoCManager.Register<CefManager>();
-
             IoCManager.BuildGraph();
-
-            IoCManager.Resolve<CefManager>().Initialize();
 
             IoCManager.Resolve<IUserInterfaceManager>().Stylesheet = BasicStyleSheet.Make();
 
@@ -44,6 +40,7 @@ namespace Template.Game
 
             // DEVNOTE: Registers all of your components.
             factory.DoAutoRegistrations();
+            factory.GenerateNetIds();
 
             TemplateIoC.Register();
 
@@ -69,15 +66,11 @@ namespace Template.Game
             base.Dispose(disposing);
 
             // DEVNOTE: You'll want to do a proper shutdown here.
-            
-            IoCManager.Resolve<CefManager>().Shutdown();
         }
 
         public override void Update(ModUpdateLevel level, FrameEventArgs frameEventArgs)
         {
             base.Update(level, frameEventArgs);
-
-            IoCManager.Resolve<CefManager>().Update();
         }
     }
 }
