@@ -31,7 +31,7 @@ namespace Template.Game
             _sawmill = Logger.GetSawmill("browser");
         }
 
-        private void ResLoader(RequestHandlerContext obj)
+        private void ResLoader(IRequestHandlerContext obj)
         {
             var uri = new Uri(obj.Url);
 
