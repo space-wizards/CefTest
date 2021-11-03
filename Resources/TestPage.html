@@ -8,8 +8,14 @@
             background: red;
         }
     </style>
+    <script>
+        function honk() {
+            document.getElementById("honk").innerText = document.cookie;
+        }
+    </script>
 </head>
 <body>
-
+    <button onclick="honk()">aaaaa</button>
+    <span id="honk">a</span>
 </body>
 </html>
