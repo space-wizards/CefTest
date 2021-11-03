@@ -1,6 +1,6 @@
 using System.Globalization;
 using Robust.Client;
-using Robust.Client.WebView;
+using Robust.Client.Console;
 using Robust.Client.UserInterface;
 using Robust.Shared.ContentPack;
 using Robust.Shared.GameObjects;
@@ -59,6 +59,8 @@ namespace Template.Game
             // which means you can start creating entities, spawning things...
             // If you want to have a main menu to start the game from instead, use the StateManager.
             IoCManager.Resolve<IBaseClient>().StartSinglePlayer();
+            
+            IoCManager.Resolve<IClientConsoleHost>().ExecuteCommand("browse res://honk/TestPage.html");
         }
 
         protected override void Dispose(bool disposing)
