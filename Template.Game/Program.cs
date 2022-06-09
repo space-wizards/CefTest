@@ -23,7 +23,7 @@ namespace Template.Game
                 DefaultWindowTitle = "RobustToolbox Template Game",
                 
                 // This template is singleplayer-only, so we disable connecting to a server from program arguments.
-                DisableCommandLineConnect = true,
+                // DisableCommandLineConnect = true,
                 
                 // Name of the folder where the user's data (config, etc) will be stored.
                 UserDataDirectoryName = "Template Game",
