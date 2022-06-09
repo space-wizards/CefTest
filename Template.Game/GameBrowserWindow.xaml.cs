@@ -11,7 +11,7 @@ using Robust.Shared.Log;
 namespace Template.Game
 {
     [GenerateTypedNameReferences]
-    public sealed partial class GameBrowserWindow : SS14Window
+    public sealed partial class GameBrowserWindow : DefaultWindow
     {
         [Dependency] private readonly IResourceManager _res = default!;
 

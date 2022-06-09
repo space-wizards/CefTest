@@ -1,8 +1,8 @@
-<SS14Window xmlns="https://spacestation14.io"
+<DefaultWindow xmlns="https://spacestation14.io"
             xmlns:cef="clr-namespace:Robust.Client.WebView;assembly=Robust.Client.WebView"
             SetWidth="1366" SetHeight="768">
     <BoxContainer Orientation="Vertical">
         <LineEdit Name="UrlBar" />
         <cef:WebViewControl Name="Browser" VerticalExpand="True" />
     </BoxContainer>
-</SS14Window>
+</DefaultWindow>
