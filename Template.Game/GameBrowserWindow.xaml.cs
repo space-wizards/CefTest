@@ -38,7 +38,7 @@ namespace Template.Game
             if (uri.Scheme != "res")
                 return;
 
-            _sawmill.Debug($"HANDLING: {obj.Url}, {uri.AbsolutePath}");
+            // _sawmill.Debug($"HANDLING: {obj.Url}, {uri.AbsolutePath}");
 
             if (_res.TryContentFileRead(uri.AbsolutePath, out var stream))
             {

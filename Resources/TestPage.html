@@ -4,19 +4,34 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-/*        html {
+        html {
             background: red;
-        }*/
+        }
     </style>
     <script>
-        function honk() {
-            document.getElementById("honk").innerText = document.cookie;
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = 'expires='+d.toUTCString();
+            document.cookie = cname + '=' + cvalue + '; ' + expires;
+        }
+        
+        function get() {
+            document.getElementById("honk").innerText = `${document.cookie} LocalStorage: ${window.localStorage.getItem("foobar")}`;
+        }
+        function set() {
+            document.cookie = "foo=bar";
+            setCookie("honk", "baz", 1);
+            window.localStorage.setItem("foobar", "what the heeeeee");
+            document.getElementById("honk").innerText = "Set!";
+                    
         }
     </script>
 </head>
 <body>
 <textarea></textarea>
-    <button onclick="honk()">aaaaa</button>
+    <button onclick="get()">get</button>
+    <button onclick="set()">set</button>
     <span id="honk">a</span>
 </body>
 </html>
